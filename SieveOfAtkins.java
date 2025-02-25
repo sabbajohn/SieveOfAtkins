@@ -17,7 +17,7 @@ class SieveOfAtkins {
 
         boolean sieve[] = new boolean[limit + 1];
 
-        for (int i = 0; i < limit; i++) {
+        for (int i = 0; i <= limit; i++) {
             sieve[i] = false;
         }
 
@@ -30,7 +30,7 @@ class SieveOfAtkins {
                 }
 
                 n = (int) (3 * (Math.pow(x, 2)) + Math.pow(y, 2));
-                if (n <= limit && n % 6 == 1) {
+                if (n <= limit && n % 12 == 7) {
                     sieve[n] ^= true;
                 }
 
@@ -52,7 +52,7 @@ class SieveOfAtkins {
         }
         for (int a = 5; a <= limit; a++) {
             if (sieve[a]) {
-                System.err.println(a);
+                System.out.println(a);
             }
         }
     }
